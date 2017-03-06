@@ -1,0 +1,29 @@
+{
+  "name": "express-template",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "async": "^2.1.5",
+    "blueimp-file-upload": "^9.17.0",
+    "body-parser": "~1.16.0",
+    "browserify": "^14.1.0",
+    "busboy": "^0.2.14",
+    "cookie-parser": "~1.4.3",
+    "exorcist": "^0.4.0",
+    "express": "~4.14.1",
+    "gridfs-stream": "^1.1.1",
+    "highlight.js": "^9.9.0",
+    "jade": "~1.11.0",
+    "jadeify": "^4.6.0",
+    "jquery": "^3.1.1",
+    "mime-types": "^2.1.14",
+    "mongoose": "^4.8.4",
+    "morgan": "~1.7.0",
+    "node-sass": "^4.5.0",
+    "pleeease": "^4.1.0",
+    "shortid": "^2.2.6",
+    "uglifyify": "^3.0.4"
+  }
+}

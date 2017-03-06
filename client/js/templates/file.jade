@@ -1,0 +1,18 @@
+if url
+  .file
+    .icon
+      img(src=icon)
+    .info
+      .name=name
+      .size=size
+    .buttons
+      a.download(href=url) Download
+      a.copy Copy Link
+else
+  .file.uploading
+    .icon
+      img(src=icon)
+    .info
+      .name=name
+      .progress_bar
+        .fill

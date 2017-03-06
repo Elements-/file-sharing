@@ -1,0 +1,15 @@
+html
+  head
+    title=doc.name
+    script(async, src='/js/download.min.js')
+    link(rel='stylesheet', href='/css/styles.min.css')
+  
+  body
+    .container(page='download')
+      if mime_type.indexOf('image') != -1
+        img(src=url_raw)
+      else if mime_type == 'text/plain' || mime_type == 'application/javascript' || mime_type == 'application/perl' || mime_type == 'application/postscript'
+        .text(load_remote=url_raw)
+      else
+        a(href=url_raw) Download
+    

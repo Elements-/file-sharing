@@ -1,0 +1,31 @@
+html
+  head
+    title Express App
+    script(async, src='/js/home.min.js')
+    link(rel='stylesheet', href='/css/styles.min.css')
+  
+  body
+    .container(page='home')
+      .upper
+        .info
+          .title files.elmnts.co
+          a(href='/curl') API
+          a(href='/sharex') ShareX
+          a(href='/curl') Curl
+        
+        .stats
+          .stat
+            .number=uploads
+            .label  uploads
+          
+          .stat
+            .number=downloads
+            .label  downloads
+        
+        .files
+        
+      .lower
+        .dropbox
+          | Drop files here or 
+          label(for='browse') browse
+          input#browse(type='file')

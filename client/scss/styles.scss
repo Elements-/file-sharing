@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
+$white: #FFF;
+$grey1: darken($white, 20%);
+$grey2: darken($white, 50%);
+$grey3: darken($white, 80%);
+$blue: #2f94ff;
+$green: #2ECC71;
+$asphalt: #2C3E50;
+
+$circle_diameter: 300px;
+
+body, html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $asphalt;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+@import '_home';
+@import '_download';
