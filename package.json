@@ -14,7 +14,6 @@
     "exorcist": "^0.4.0",
     "express": "~4.14.1",
     "gridfs-stream": "^1.1.1",
-    "highlight.js": "^9.9.0",
     "jade": "~1.11.0",
     "jadeify": "^4.6.0",
     "jquery": "^3.1.1",
@@ -24,6 +23,7 @@
     "node-sass": "^4.5.0",
     "pleeease": "^4.1.0",
     "shortid": "^2.2.6",
-    "uglifyify": "^3.0.4"
+    "uglifyify": "^3.0.4",
+    "zeroclipboard": "^2.3.0"
   }
 }

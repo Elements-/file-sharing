@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 var express = require('express');
 var async = require('async');
 var util = require('util');
+var path = require('path');
 
 var File = mongoose.model('File');
 var router = express.Router();
@@ -58,7 +59,8 @@ router.get('/:id/:filename?', function(req, res, next) {
       'download',
       {
         url_raw: url_raw,
-        doc: doc
+        doc: doc,
+        extension: path.extname(doc.name).toLowerCase()
       }
     );
   });

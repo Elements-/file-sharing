@@ -6,8 +6,10 @@ if url
       .name=name
       .size=size
     .buttons
-      a.download(href=url) Download
-      a.copy Copy Link
+      a.download(href=url)
+        i.bts.bt-cloud-download
+      a.copy(data-clipboard-text=url)
+        i.bts.bt-cut
 else
   .file.uploading
     .icon

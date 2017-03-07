@@ -4,6 +4,7 @@ var async = require('async');
 var shortid = require('shortid');
 var util = require('util');
 var Busboy = require('busboy');
+var bytes = require('bytes');
 
 var File = mongoose.model('File');
 var router = express.Router();
@@ -15,30 +16,15 @@ router.use('/:filename?', function(req, res, next) {
   
   async.waterfall(
     [
-      function downloadFilePUT(next) {
-        if(req.method != 'PUT') return next();
-        
-        req
-        .pipe(
-          mongoose.gridfs.createWriteStream({
-            filename: id,
-            root: 'data'
-          })
-        )
-        .on('close', function() {
-          filename = req.params.filename;
-          next();
-        });
-      },
-      
-      function downloadFilePOST(next) {
-        if(req.method != 'POST') return next();
-        
+      function downloadFile(next) {
         var busboy = new Busboy({
-          headers: req.headers
+          headers: req.headers,
+          limits: {
+            fileSize: bytes('1mb')
+          }
         });
         
-        busboy.on('file', function(fieldname, file, name) {
+        busboy.on('file', function(fieldname, file, name, a, b,c,d) {
           filename = name;
           
           file
@@ -51,6 +37,10 @@ router.use('/:filename?', function(req, res, next) {
           .on('finish', function() {
             next();
           });
+          
+          file.on('limit', function() {
+            console.log('Limit')
+          })
         });
         
         req.pipe(busboy);
