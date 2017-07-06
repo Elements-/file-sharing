@@ -25,7 +25,7 @@ router.use('/:filename?', function(req, res, next) {
         });
         
         busboy.on('file', function(fieldname, file, name, a, b,c,d) {
-          filename = name;
+          filename = name.replace(/\040/g, '%20');
           
           file
           .pipe(

@@ -61,6 +61,8 @@ $(document).ready(function() {
         
         var copyButton = new ZeroClipboard($('.file.uploading a.copy').get());
         
+        $('.file.uploading').removeClass('uploading');
+        
         copyButton.on('aftercopy', function(e) {
           var icon = $(e.target).find('i');
           
